@@ -4,17 +4,17 @@ Enterprise Docker security platform for Docker image vulnerability scanning and 
 
 ## V1 Features
 
- Trivy-based Docker/OCI image vulnerability scanning
-Running-container configuration auditing through the Docker Engine API
-Security severity thresholds and policy evaluation
-FastAPI REST API
-PostgreSQL persistence
-Redis + Celery background scans
-API key authentication
-Prometheus metrics
-Docker Compose development stack
-Pytest test suite
-GitHub Actions CI and security workflows
+- Trivy-based Docker/OCI image vulnerability scanning
+- Running-container configuration auditing through the Docker Engine API
+- Security severity thresholds and policy evaluation
+- FastAPI REST API
+- PostgreSQL persistence
+- Redis + Celery background scans
+- API key authentication
+- Prometheus metrics
+- Docker Compose development stack
+- Pytest test suite
+- GitHub Actions CI and security workflows
   
 - <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/913a29ac-71fb-41d0-be57-859487b313cd" />
 
