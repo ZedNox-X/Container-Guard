@@ -17,16 +17,12 @@ Enterprise Docker security platform for Docker image vulnerability scanning and 
 - GitHub Actions CI and security workflows
 - <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/913a29ac-71fb-41d0-be57-859487b313cd" />
 
-
 ## Quick start
-
 Requirements: Docker Engine with Compose v2.
-
 ```bash
 cp .env.example .env
 docker compose up --build
 ```
-
 API: http://localhost:8000
 Docs: http://localhost:8000/docs
 Metrics: http://localhost:8000/metrics
@@ -53,6 +49,3 @@ ContainerGuard is a defensive auditing tool. It does not modify containers, pull
 
 For production, run the API behind TLS, use a dedicated read-only Docker socket proxy, rotate API credentials, restrict network access, and pin image versions.
 
-## License
-
-MIT
