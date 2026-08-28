@@ -15,6 +15,8 @@ Enterprise Docker security platform for Docker image vulnerability scanning and 
 - Docker Compose development stack
 - Pytest test suite
 - GitHub Actions CI and security workflows
+- <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/913a29ac-71fb-41d0-be57-859487b313cd" />
+
 
 ## Quick start
 
