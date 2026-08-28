@@ -1,0 +1,56 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://containerguard:containerguard@postgres:5432/containerguard
+      REDIS_URL: redis://redis:6379/0
+      API_KEY: ${API_KEY:-change-me-in-production}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.worker
+    environment:
+      DATABASE_URL: postgresql+psycopg://containerguard:containerguard@postgres:5432/containerguard
+      REDIS_URL: redis://redis:6379/0
+      API_KEY: ${API_KEY:-change-me-in-production}
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - trivy-cache:/root/.cache/trivy
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: containerguard
+      POSTGRES_USER: containerguard
+      POSTGRES_PASSWORD: containerguard
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:8-alpine
+
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - api
+
+volumes:
+  postgres-data:
+  trivy-cache:
