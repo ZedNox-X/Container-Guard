@@ -50,3 +50,4 @@ ContainerGuard is a defensive auditing tool. It does not modify containers, pull
 
 For production, run the API behind TLS, use a dedicated read-only Docker socket proxy, rotate API credentials, restrict network access, and pin image versions.
 - Version: 002
+Updated on 1st September 2026 by Melbin George
