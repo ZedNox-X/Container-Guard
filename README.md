@@ -49,5 +49,6 @@ curl http://localhost:8000/api/v1/containers/security \
 ContainerGuard is a defensive auditing tool. It does not modify containers, pull arbitrary code, or attempt exploitation. The scanner uses Trivy for image CVEs and Docker Engine metadata for configuration checks.
 
 For production, run the API behind TLS, use a dedicated read-only Docker socket proxy, rotate API credentials, restrict network access, and pin image versions.
+
 - Version: 002
 Updated on 09-09-2026 by Melbin George
